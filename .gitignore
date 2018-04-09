@@ -1,0 +1,10 @@
+# Editors
+**/__pycache__/
+.idea/
+
+# pytest
+.cache/
+tests/.cache/
+
+# environment variables
+*.env
