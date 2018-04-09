@@ -9,6 +9,7 @@
 # pytest
 .cache/
 tests/.cache/
+.pytest_cache/
 
 # environment variables
 *.env
