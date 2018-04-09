@@ -25,3 +25,10 @@ Finally, read the `README.md` of your generated project.
 - `Procfile` to deploy on Heroku
 - Continuous Integration with `.travis.yml`
 - Code Quality with `.codeclimate.yml`
+
+
+## TODO
+- ceate tests for the generated project
+- create simple dash callbacks
+- support different CSS frameworks (e.g. [bulma](https://bulma.io/), [milligram](https://milligram.io/), [iota](https://github.com/korywakefield/iota))
+- automatic nightly builds for TravisCI with [nightli.es](http://nightli.es/)
