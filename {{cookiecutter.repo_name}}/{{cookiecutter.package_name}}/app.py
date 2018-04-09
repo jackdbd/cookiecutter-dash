@@ -7,20 +7,10 @@ from flask import Flask
 from dash import Dash
 from dash.dependencies import Input, Output, State
 from dotenv import load_dotenv
-from {{cookiecutter.package_name}}.exceptions import ImproperlyConfigured
+from exceptions import ImproperlyConfigured
 
 DOTENV_PATH = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(DOTENV_PATH)
-
-external_js = []
-
-external_css = [
-    # dash stylesheet
-    'https://codepen.io/chriddyp/pen/bWLwgP.css',
-    # Google Fonts
-    'https://fonts.googleapis.com/css?family=Lobster|Raleway',
-]
-
 
 if 'DYNO' in os.environ:
     # the app is on Heroku
@@ -32,25 +22,32 @@ else:
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
     load_dotenv(dotenv_path)
 
-py.sign_in(os.environ['PLOTLY_USERNAME'], os.environ['PLOTLY_API_KEY'])
+try:
+    py.sign_in(os.environ['PLOTLY_USERNAME'], os.environ['PLOTLY_API_KEY'])
+except KeyError:
+    raise ImproperlyConfigured('Plotly credentials not set in .env')
 
-
-
-app_name = 'Dash FDA'
+app_name = '{{cookiecutter.project_name}}'
 server = Flask(app_name)
-server.secret_key = os.environ.get('SECRET_KEY')
-if server.secret_key is None:
-    raise ImproperlyConfigured('Flask SECRET KEY not set in .env')
+
+try:
+    server.secret_key = os.environ['SECRET_KEY']
+except KeyError:
+    raise ImproperlyConfigured('SECRET KEY not set in .env:')
+
 app = Dash(name=app_name, server=server, csrf_protect=False)
 
-cache = Cache(app.server, config={
-    'CACHE_TYPE': 'filesystem', 'CACHE_DIR': 'cache',
-    'CACHE_THRESHOLD': 10, 'CACHE_DEFAULT_TIMEOUT': 30})
-# app.config.supress_callback_exceptions = True
+external_js = []
+
+external_css = [
+    # dash stylesheet
+    'https://codepen.io/chriddyp/pen/bWLwgP.css',
+    'https://fonts.googleapis.com/css?family=Lobster|Raleway',
+    '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+]
 
 theme = {
     'font-family': 'Lobster',
-    # 'background-color': '#787878',
     'background-color': '#e0e0e0',
 }
 def create_header():
@@ -83,36 +80,40 @@ def create_content():
 
             html.Hr(),
 
-            # line charts
             html.Div(
                 children=[
-                    dcc.Graph(id='line-chart'),
-                    dcc.Graph(id='line-chart-day'),
+                    dcc.Graph(
+                        id='graph-0',
+                        figure={
+                            'data': [
+                                {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
+                                {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
+                            ],
+                            'layout': {'title': 'Dash Data Visualization'},
+                        },
+                    ),
                 ],
+                className='row',
+                style={'margin-bottom': 20},
             ),
 
-            html.Hr(),
-
-            dcc.Graph(
-                id='example-graph',
-                figure={
-                    'data': [
-                        {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                        {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
-                    ],
-                    'layout': {'title': 'Dash Data Visualization'},
-                }
-            )
-
-            # pie charts
             html.Div(
                 children=[
                     html.Div(
-                        dcc.Graph(id='pie-event'),
+                        dcc.Graph(id='graph-1'),
                         className='six columns',
                     ),
                     html.Div(
-                        dcc.Graph(id='pie-device'),
+                        dcc.Markdown('''
+                        This is a markdown description created with a Dash Core Component.
+                        
+                        > A {number} days of training to develop.
+                        > Ten {number} days of training to polish.
+                        >
+                        > — Miyamoto Musashi
+
+                        ***
+                        '''.format(number='thousand').replace('  ', '')),
                         className='six columns',
                     ),
                 ],
@@ -147,7 +148,16 @@ def create_footer():
             html.A('some website', href='https://some-website.com/', target='_blank')
         ],
     )
-    div = html.Div([p0, p1])
+    a_fa = html.A(
+        children=[
+            html.I([], className='fa fa-font-awesome fa-2x'),
+            html.Span('Font Awesome')
+        ],
+        style={'text-decoration': 'none'},
+        href='http://fontawesome.io/', target='_blank',
+    )
+
+    div = html.Div([p0, p1, a_fa])
     footer = html.Footer(children=div, style=footer_style)
     return footer
 
@@ -171,6 +181,8 @@ for js in external_js:
 for css in external_css:
     app.css.append_css({'external_url': css})
 
+
+# TODO: callbacks
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
