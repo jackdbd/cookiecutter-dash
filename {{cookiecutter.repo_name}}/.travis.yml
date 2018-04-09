@@ -1,0 +1,16 @@
+sudo: false
+branches:
+  only:
+    - master
+language: python
+env:
+- FLASK_APP=autoapp.py FLASK_DEBUG=1
+python:
+  - 3.5
+  - 3.6
+install: pip install -r requirements.txt
+script: flask test
+notifications:
+    email:
+        on_success: change
+        on_failure: always

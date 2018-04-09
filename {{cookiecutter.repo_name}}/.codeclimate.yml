@@ -1,0 +1,24 @@
+engines:
+  pep8:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - python
+      - javascript
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.py"
+  - "**.js"
+  - "**.css"
+  - "**.scss"
+exclude_paths: []
