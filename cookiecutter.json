@@ -1,0 +1,11 @@
+{
+    "project_name": "My Dash App",
+    "repo_name": "{{ cookiecutter.project_name.lower()|replace(' ', '-') }}",
+    "package_name": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+    "author_name": "Giacomo Debidda",
+    "github_username": "jackdbd",
+    "email": "you@example.com",
+    "description": "A short description of the project.",
+    "version": "0.1.0",
+    "open_source_license": ["MIT", "BSD", "GPLv3", "Not open source"]
+}
