@@ -8,8 +8,14 @@ env:
 python:
   - 3.5
   - 3.6
-install: pip install -r requirements.txt
-script: flask test
+install:
+  - pip install -r requirements.txt
+script:
+  # - python setup.py install
+  # - flask test
+  - coverage run -m pytest -v tests
+after_success:
+  - codecov
 notifications:
     email:
         on_success: change
