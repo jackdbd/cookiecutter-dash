@@ -1,6 +1,7 @@
-dash>=0.21.0
-dash-renderer>=0.11.3
-dash-html-components>=0.9.0
-dash-core-components>=0.21.1
+dash
+dash-renderer
+dash-html-components
+dash-core-components
 plotly
 python-dotenv
+pytest
