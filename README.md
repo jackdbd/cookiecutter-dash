@@ -36,6 +36,7 @@ Your generated Dash app will have:
 
 
 ## TODO
+- create more tests for this cookiecutter with [pytest-cookies](https://github.com/hackebrot/pytest-cookies)
 - create tests for the generated project
 - create simple dash callbacks
 - support different CSS frameworks (e.g. [bulma](https://bulma.io/), [milligram](https://milligram.io/), [iota](https://github.com/korywakefield/iota))
