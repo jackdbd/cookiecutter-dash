@@ -5,8 +5,13 @@ branches:
 language: python
 python:
   - 3.6
-install: pip install -r requirements.txt
-script: pytest
+install:
+  pip install -r requirements.txt
+script:
+  # - python setup.py install
+  - coverage run -m pytest -v tests
+after_success:
+  - codecov
 notifications:
     email:
         on_success: change
