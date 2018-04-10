@@ -5,26 +5,34 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Cookiecutter
 
 
 ## Usage
-If you don't already have it, install `cookiecutter` globally:
+Create a new Dash is as easy as 1-2-3.
+
+1. If you don't already have it, install `cookiecutter` globally:
 
 ```shell
 pip install cookiecutter
 ```
 
-Then, run the following command to create the skeleton of your Dash app:
+2. Run the following command to create the skeleton of your Dash app:
 
 ```shell
 cookiecutter https://github.com/jackdbd/cookiecutter-dash
 ```
 
-Finally, read the `README.md` of your generated project.
+3. Follow the instructions in the `README.md` of your generated project.
 
 
 ## Features
+Your generated Dash app will have:
+
 - Environment variables loaded from `.env` file, with [dotenv](https://github.com/theskumar/python-dotenv)
 - `Procfile` to deploy on Heroku
 - Continuous Integration with `.travis.yml`
 - Code Quality with `.codeclimate.yml`
+- Test coverage with `codecov.yml`
+- Python dependencies management with `.pyup.yml`
+- Python code formatting with [black](https://github.com/ambv/black)
+- A utility shell script to create a Python virtual environment and create your `Initial commit`
 
 
 ## TODO
