@@ -30,30 +30,6 @@ python -m pytest -v
 ```
 
 
-## Project tree
-You should see this project tree:
-
-```shell
-.
-├── codecov.yml
-├── LICENSE
-├── {{cookiecutter.package_name}}
-│   ├── app.py
-│   ├── data
-│   ├── exceptions
-│   └── __init__.py
-├── Procfile
-├── README.md
-├── requirements.txt
-├── screenshots
-├── tests
-│   ├── __init__.py
-│   └── test_{{cookiecutter.package_name}}.py
-└── utility
-    └── setup_virtualenv_and_repo.sh
-```
-
-
 ## Run your Dash app
 Check that the virtual environment is activated, then run:
 
