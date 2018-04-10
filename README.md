@@ -36,7 +36,11 @@ Your generated Dash app will have:
 
 
 ## TODO
-- ceate tests for the generated project
+- create tests for the generated project
 - create simple dash callbacks
 - support different CSS frameworks (e.g. [bulma](https://bulma.io/), [milligram](https://milligram.io/), [iota](https://github.com/korywakefield/iota))
-- automatic nightly builds for TravisCI with [nightli.es](http://nightli.es/)
+- Better README
+- More modular project tree?
+- [tox](https://tox.readthedocs.io/en/latest/) integration?
+- Error tracking? (e.g. [Sentry](https://sentry.io/for/python/), [Rollbar](https://rollbar.com/error-tracking/python/))
+- Docker integration?
