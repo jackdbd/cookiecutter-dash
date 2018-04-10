@@ -7,5 +7,7 @@
 tests/.cache/
 .pytest_cache/
 
+.coverage
+
 # environment variables
 *.env
