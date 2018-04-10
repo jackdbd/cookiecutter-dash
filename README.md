@@ -25,7 +25,7 @@ cookiecutter https://github.com/jackdbd/cookiecutter-dash
 ## Features
 Your generated Dash app will have:
 
-- Environment variables loaded from `.env` file, with [dotenv](https://github.com/theskumar/python-dotenv)
+- Environment variables loaded from an `.env` file, with [python-dotenv](https://github.com/theskumar/python-dotenv)
 - `Procfile` to deploy on Heroku
 - Continuous Integration with `.travis.yml`
 - Code Quality with `.codeclimate.yml`

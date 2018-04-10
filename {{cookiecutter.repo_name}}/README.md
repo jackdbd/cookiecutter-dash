@@ -13,7 +13,7 @@ If you are on Linux and you have [virtualenvwrapper](https://virtualenvwrapper.r
 - create a git repository
 - create your `Initial commit`
 
-Here is how you do it:
+Here is how you run the script:
 
 ```shell
 cd {{cookiecutter.repo_name}}
@@ -37,3 +37,19 @@ Check that the virtual environment is activated, then run:
 cd {{cookiecutter.package_name}}
 python app.py
 ```
+
+## Code formatting
+To format all python files, run:
+
+```shell
+black .
+```
+
+## Pin your dependencies
+
+```shell
+pip freeze > requirements.txt
+```
+
+## Deploy on Heroku
+[dash-heroku-template](https://github.com/plotly/dash-heroku-template)

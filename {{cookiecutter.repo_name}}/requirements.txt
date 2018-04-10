@@ -1,7 +1,8 @@
 dash
-dash-renderer
-dash-html-components
 dash-core-components
+dash-html-components
+dash-renderer
+gunicorn  # for the deployment on Heroku
 plotly
-python-dotenv
 pytest
+python-dotenv
