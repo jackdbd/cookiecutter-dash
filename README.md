@@ -1,5 +1,5 @@
 # Cookiecutter Dash
-[![Build Status](https://travis-ci.org/jackdbd/cookiecutter-dash.svg?branch=master)](https://travis-ci.org/jackdbd/cookiecutter-dash)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/jackdbd/cookiecutter-dash.svg?branch=master)](https://travis-ci.org/jackdbd/cookiecutter-dash) [![Updates](https://pyup.io/repos/github/jackdbd/cookiecutter-dash/shield.svg)](https://pyup.io/repos/github/jackdbd/cookiecutter-dash/) [![Python 3](https://pyup.io/repos/github/jackdbd/cookiecutter-dash/python-3-shield.svg)](https://pyup.io/repos/github/jackdbd/cookiecutter-dash/) [![Coverage](https://codecov.io/github/jackdbd/cookiecutter-dash/coverage.svg?branch=master)](https://codecov.io/github/jackdbd/cookiecutter-dash?branch=master) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Cookiecutter Dash creates a minimal project skeleton for a Dash app.
 
