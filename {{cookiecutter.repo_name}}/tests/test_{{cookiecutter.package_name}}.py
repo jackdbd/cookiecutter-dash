@@ -1,11 +1,16 @@
-import unittest
+import pytest
+from {{cookiecutter.package_name}}.exceptions import ImproperlyConfigured
 
 
-class TestYourTestClass(unittest.TestCase):
+def f():
+    raise ImproperlyConfigured('TODO')
 
-    def test_your_test_case(self):
-        self.assertTrue(True)
+def test_exception_is_raised():
+    with pytest.raises(ImproperlyConfigured):
+        f()
 
+def func(x):
+    return x + 1
 
-if __name__ == "__main__":
-    unittest.main()
+def test_basic():
+    assert func(3) == 4
