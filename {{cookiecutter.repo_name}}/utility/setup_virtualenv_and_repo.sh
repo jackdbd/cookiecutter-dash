@@ -4,6 +4,3 @@ pip install -r requirements.txt
 git init
 git add .
 git commit -m "Initial commit"
-
-echo "Here is your project tree:"
-tree -L 2
