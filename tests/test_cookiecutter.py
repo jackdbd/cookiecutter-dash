@@ -56,7 +56,15 @@ def test_default_configuration(cookies, context):
     assert result.exception is None
     assert result.project.basename == context["repo_name"]
     assert result.project.isdir()
-
     paths = build_files_list(str(result.project))
     assert paths
     check_paths(paths)
+
+
+def test_heroku_procfile(cookies, context):
+    result = cookies.bake(extra_context=context)
+    procfile_path = os.path.join(result.project, 'Procfile')
+    with open(procfile_path, mode='r') as f:
+        heroku_config = f.readline()
+        server_config = heroku_config.split()[2]
+        assert server_config == 'my_test_project.app:server'
