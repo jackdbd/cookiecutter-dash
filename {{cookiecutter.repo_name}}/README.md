@@ -26,7 +26,7 @@ Then you will need to create an `.env` file where to store your environment vari
 Run all tests with a simple:
 
 ```
-python -m pytest -v
+pytest -v
 ```
 
 
@@ -52,4 +52,4 @@ pip freeze > requirements.txt
 ```
 
 ## Deploy on Heroku
-[dash-heroku-template](https://github.com/plotly/dash-heroku-template)
+Follow the [Dash deployment guide](https://dash.plot.ly/deployment) or have a look at the [dash-heroku-template](https://github.com/plotly/dash-heroku-template)
