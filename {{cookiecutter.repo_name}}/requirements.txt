@@ -1,8 +1,8 @@
-dash
-dash-core-components
-dash-html-components
-dash-renderer
-gunicorn  # for the deployment on Heroku
-plotly
-pytest
-python-dotenv
+dash==0.21.0
+dash-core-components==0.22.1
+dash-html-components==0.10.0
+dash-renderer==0.12.1
+gunicorn==19.7.1  # for the deployment on Heroku
+plotly==2.5.1
+pytest==3.5.0
+python-dotenv==0.8.2
