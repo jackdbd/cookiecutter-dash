@@ -22,5 +22,5 @@ pytest-cookies==0.3.0
 python-dateutil==2.7.3
 requests==2.19.1
 six==1.11.0
-urllib3==1.22
+urllib3==1.23
 whichcraft==0.4.1
