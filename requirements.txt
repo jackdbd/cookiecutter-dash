@@ -9,7 +9,7 @@ codecov==2.0.15
 cookiecutter==1.6.0
 coverage==4.5.1
 future==0.17.0
-idna==2.6
+idna==2.7
 Jinja2==2.10
 jinja2-time==0.2.0
 MarkupSafe==1.0
