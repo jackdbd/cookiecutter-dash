@@ -15,7 +15,7 @@ jinja2-time==0.2.0
 MarkupSafe==1.0
 more-itertools==4.3.0
 pluggy==0.8.0
-poyo==0.4.1
+poyo==0.4.2
 py==1.5.3
 pytest==3.6.0
 pytest-cookies==0.3.0
