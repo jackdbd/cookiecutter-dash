@@ -1,7 +1,7 @@
 dash==0.29.0
 dash-core-components==0.38.0
 dash-html-components==0.13.2
-dash-renderer==0.13.0
+dash-renderer==0.14.3
 gunicorn==19.8.1  # for the deployment on Heroku
 plotly==2.6.0
 pytest==3.10.1
