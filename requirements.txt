@@ -1,5 +1,5 @@
 arrow==0.12.1
-attrs==18.1.0
+attrs==18.2.0
 binaryornot==0.4.4
 black==18.5b1
 certifi==2018.4.16
