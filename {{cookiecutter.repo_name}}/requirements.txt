@@ -5,4 +5,4 @@ dash-renderer==0.16.1
 gunicorn==19.9.0  # for the deployment on Heroku
 plotly==3.4.2
 pytest==4.0.2
-python-dotenv==0.8.2
+python-dotenv==0.10.1
